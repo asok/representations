@@ -47,7 +47,7 @@ module Representations
     def namespace(a)
       namespaced_representation = self.clone
       namespaced_representation.namespace = current_namespace(a)
-      namespaced_representation
+      yield namespaced_representation
     end
     #Forwards ActiveRecord invocation and wraps result in appropriate Representation
     #Suppose that User extends ActiveRecord::Base:
